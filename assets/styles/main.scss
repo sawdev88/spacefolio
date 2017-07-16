@@ -4,7 +4,7 @@ html, body {
   font-family: 'Play', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6, p { margin: 0; padding: 0 }
+h1, h2, h3, h4, h5, h6, p, li, ul { margin: 0; padding: 0 }
 html { font-size: 1vw; }
 
 h1,
@@ -33,6 +33,11 @@ $yellow: rgb(198,217,71);
 $teal: rgb(76,119,137);
 $bg: rgb(59,29,46);
 $ease: .3s ease-in-out;
+
+.center {
+  width: 80%;
+  margin: 0 auto;
+}
 
 .blue-star {
   height: .8rem;
@@ -87,74 +92,34 @@ $ease: .3s ease-in-out;
   100% { opacity: 1 }
 }
 
-#container {
-  background: url('../img/moon-bg.png') no-repeat center center / cover;
+#landing-container {
+  background: url('../img/base_layer.png') no-repeat center center fixed;
   height: 100vh;
   width: 100vw;
   position: relative;
   overflow: hidden;
 
-  .callout {
-    position: absolute;
-    bottom: 16vh;
-    right: 10vw;
-    text-align: center;
+  .clouds-layer {
+    position: relative;
+    bottom: -24rem;
   }
+}
 
-  .icon-container {
-    position: absolute;
-    bottom: 3vh;
-    right: 3vw;
+#container {
+  height: 500rem;
+  background: #fff;
 
-    i {
-      color: rgba(255,255,255,.5);
-      font-size: 2rem;
-      margin-left: 1rem;
-      transition: $ease;
-
-      &:hover {
-        color: rgba(255,255,255,.9);
-        cursor: pointer;
-      }
-    }
-  }
-
-  .email-container {
-    background: $bg;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    bottom: -6rem;
-    z-index: 1;
-    text-align: center;
-    height: 6.1rem;
-    transition: $ease;
-
-    .fa-close {
-      position: absolute;
-      right: 2rem;
-      bottom: 1.75rem;
-      font-size: 1.75rem;
-      color: rgba(255,255,255,.25);
-
-      &:hover {
-        cursor: pointer;
-      }
+  .nav {
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      padding: 2rem 0;
     }
 
-    h2 {
-      margin-top: 2.25rem;
+    li {
+      display: inline-block;
     }
-  }
-
-  .show-email {
-    bottom: 0;
-  }
-
-  hr {
-    width: 80%;
-    opacity: .5;
   }
 }
 
