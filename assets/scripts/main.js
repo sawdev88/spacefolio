@@ -16,37 +16,50 @@ function smoothScroll(eID) {
     let timer = 0;
 
     if (stopY > startY) {
-        for ( let i=startY; i<stopY; i+=step ) {
+        for (let i=startY; i<stopY; i+=step) {
             setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
             leapY += step; if (leapY > stopY) leapY = stopY; timer++;
         } return;
     }
 
-    for ( let i=startY; i>stopY; i-=step ) {
+    for (let i=startY; i>stopY; i-=step) {
         setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
         leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
     }
 
-    return false;
+  return false;
+}
+
+function convertToPx(item) {
+  return item + 'px';
 }
 
 // Parallax Landing Banner
 window.addEventListener('scroll', function () {
   let cloudMarker = -(window.pageYOffset / 4);
+  let slideMarker = window.pageYOffset / 10;
   let opacityMarker = 1 - (window.pageYOffset / 500);
-  let cloudScroll = cloudMarker + 'px';
 
-  // Move clouds up
+  // Landing Banner - Move clouds up
   if (cloudMarker > -180) {
-    document.querySelector('.clouds-layer').style.marginTop = cloudScroll;
+    document.querySelector('.clouds-layer').style.marginTop = convertToPx(cloudMarker);
   }
 
-  //Fade out text
+  // Landing Banner - Fade out text
   if (opacityMarker > .1) {
     var opacityEls = document.querySelectorAll('.opacity-effect');
     [].forEach.call(opacityEls, function(els) {
       els.style.opacity = opacityMarker;
     })
+  }
+
+  if (slideMarker < 75) {
+    document.querySelector('.skew').style.marginTop = convertToPx(slideMarker);
+  }
+
+  // About -  Move clouds
+  if (slideMarker < 300) {
+    document.querySelector('.cloud-layer').style.marginRight = convertToPx(slideMarker);
   }
 })
 
@@ -55,3 +68,16 @@ document.querySelector('.nav ul').addEventListener('click', function(e) {
   let el = e.target.dataset.nav;
   smoothScroll(document.getElementById(el).offsetTop);
 })
+
+// Chuck Norris request
+  new function () {
+    let requestURL = 'https://api.chucknorris.io/jokes/random';
+    let request = new XMLHttpRequest();
+    request.open('GET', requestURL);
+    request.responseType = 'json';
+    request.send();
+
+    request.onload = function() {
+      document.querySelector('.chuck-norris').innerHTML = (request.response.value)
+    }
+  }();

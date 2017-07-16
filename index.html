@@ -31,7 +31,7 @@
 
     <main id="container">
 
-      <nav class="nav center">
+      <nav class="nav">
         <ul>
           <li data-nav="about">About</li>
           <li data-nav="projects">Projects</li>
@@ -40,12 +40,62 @@
         </ul>
       </nav>
 
-      <section id="about" class="temp">About</section>
-      <section id="projects" class="temp">Projects</section>
-      <section id="fun" class="temp">Fun</section>
-      <section id="contact" class="temp">Contact</section>
+      <section id="about" class="center large-padding">
+        <div class="skew"></div>
 
+        <h3>About Me</h3>
+        <p>Single-origin coffee activated charcoal bespoke stumptown. Fingerstache austin woke farm-to-table prism chicharrones post-ironic, poke kickstarter. Try-hard unicorn brooklyn, kogi normcore cardigan adaptogen squid fingerstache activated charcoal pok pok yuccie jean shorts PBR&B hashtag. Woke schlitz offal listicle, scenester health goth flexitarian pabst yuccie raclette chartreuse vaporware stumptown art party. Meggings fanny pack farm-to-table, photo booth 3 wolf moon plaid flannel church-key viral pitchfork slow-carb affogato cardigan vaporware.</p>
+
+        <p class="col-2 small-margin">Cronut copper mug farm-to-table raclette, pinterest food truck cardigan DIY kogi artisan celiac. Street art pug tattooed knausgaard photo booth plaid next level. Unicorn air plant raclette man bun dreamcatcher cred. Pinterest affogato ennui whatever, gastropub lyft meh edison bulb.</p>
+
+        <div class="col-2 center-text">
+          <img class="about-img" src="./assets/img/user.jpg" alt="test">
+        </div>
+
+        <img class="cloud-layer" src="./assets/img/cloud_layer.png" alt="Cloud Layer">
+
+        <div class="clear"></div>
+      </section>
+
+      <section id="projects" class="temp">
+        <div class="center-padding">
+          <h3>Projects</h3>
+        </div>
+      </section>
+
+      <section id="fun" class="temp">
+        <h3 class="center padding-top">Countdown</h3>
+        <div class="mountain-layer"></div>
+      </section>
+
+      <section id="contact">
+        <div class="callout-container">
+          <h3 class="center">Contact</h3>
+        </div>
+
+        <div class="contact-container">
+          <div class="col-2">
+            <a href="mailto:seanwinesdev@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i><h2>seanwinesdev@gmail.com</h2></a>
+            <a href="https://github.com/sawdev88"><i class="fa fa-github" aria-hidden="true"></i><h2>sawdev88</h2></a>
+          </div>
+          <div class="col-2">
+            <h2>Send a Hello!</h2>
+            <form action="mailer.php" method="post">
+              <input id="name" type="text" name="name" placeholder="Enter your name">
+              <button id="submit" class="btn" type="submit"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <footer id="footer">
+      <div class="legal-disclamer">
+        <small>Thanks for checking out my page. 2017.</small>
+      </div>
+
+      <div class="chuck-norris"></div>
+    </footer>
   </body>
   <script src="./assets/scripts/main.js" charset="utf-8"></script>
 </html>
