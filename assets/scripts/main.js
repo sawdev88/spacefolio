@@ -32,10 +32,21 @@ function smoothScroll(eID) {
 
 // Parallax Landing Banner
 window.addEventListener('scroll', function () {
-  let pageLocation = -(window.pageYOffset / 4);
-  let cloudScroll = pageLocation + 'px';
-  if (pageLocation > -180) {
+  let cloudMarker = -(window.pageYOffset / 4);
+  let opacityMarker = 1 - (window.pageYOffset / 500);
+  let cloudScroll = cloudMarker + 'px';
+
+  // Move clouds up
+  if (cloudMarker > -180) {
     document.querySelector('.clouds-layer').style.marginTop = cloudScroll;
+  }
+
+  //Fade out text
+  if (opacityMarker > .1) {
+    var opacityEls = document.querySelectorAll('.opacity-effect');
+    [].forEach.call(opacityEls, function(els) {
+      els.style.opacity = opacityMarker;
+    })
   }
 })
 

@@ -1,3 +1,6 @@
+@import "partials/_variables";
+@import "partials/_stars";
+
 html, body {
   margin: 0;
   padding: 0;
@@ -10,86 +13,25 @@ html { font-size: 1vw; }
 h1,
 h2,
 a {
-  color : #fff;
+  color : rgba(255,255,255,.75);
   text-decoration: none;
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 5rem;
+  letter-spacing: .5rem;
 }
 
 h2,
 a {
+  text-transform: uppercase;
   font-size: 1.25rem;
-  letter-spacing: .25rem;
-  opacity: .9;
+  letter-spacing: .5rem;
 }
-
-$blue: rgb(15,149,194);
-$pink: rgb(253,134,151);
-$gray: rgb(216,216,216);
-$cyan: rgb(102,125,196);
-$yellow: rgb(198,217,71);
-$teal: rgb(76,119,137);
-$bg: rgb(59,29,46);
-$ease: .3s ease-in-out;
 
 .center {
   width: 80%;
   margin: 0 auto;
-}
-
-.blue-star {
-  height: .8rem;
-  width: .8rem;
-  background: $blue;
-  border-radius: 50%;
-  filter: blur(3px);
-}
-
-.pink-star {
-  height: .5rem;
-  width: .5rem;
-  background: $pink;
-  border-radius: 50%;
-}
-
-.gray-star {
-  height: 1rem;
-  width: 1rem;
-  background: $gray;
-  border-radius: 50%;
-  filter: blur(2px);
-}
-
-.cyan-star {
-  height: .6rem;
-  width: .6rem;
-  background: $cyan;
-  border-radius: 50%;
-  filter: blur(2px);
-}
-
-.yellow-star {
-  height: .5rem;
-  width: .5rem;
-  background: $yellow;
-  border-radius: 50%;
-  filter: blur(.75px);
-}
-
-.teal-star {
-  height: 1rem;
-  width: 1rem;
-  background: $teal;
-  border-radius: 50%;
-  filter: blur(1px);
-}
-
-@keyframes flicker {
-  0% { opacity: 1 }
-  50% { opacity: .25 }
-  100% { opacity: 1 }
 }
 
 #landing-container {
@@ -98,6 +40,12 @@ $ease: .3s ease-in-out;
   width: 100vw;
   position: relative;
   overflow: hidden;
+
+  .landing-callout {
+    text-align: center;
+    position: relative;
+    top: 14rem;
+  }
 
   .clouds-layer {
     position: relative;
@@ -124,55 +72,6 @@ $ease: .3s ease-in-out;
 
   // TEMP
   .temp { height: 50rem; }
-}
-
-.star-1 {
-  position: absolute;
-  top: 4rem;
-  right: 10rem;
-  animation: flicker 2s infinite;
-}
-
-.star-1 {
-  position: absolute;
-  top: 4rem;
-  right: 10rem;
-  animation: flicker 3s infinite;
-}
-
-.star-2 {
-  position: absolute;
-  top: 10rem;
-  right: 2rem;
-  animation: flicker 2s infinite;
-}
-
-.star-3 {
-  position: absolute;
-  bottom: 3rem;
-  right: 16rem;
-  animation: flicker 4s infinite;
-}
-
-.star-4 {
-  position: absolute;
-  top: 8remrem;
-  right: 24rem;
-  animation: flicker 4s infinite;
-}
-
-.star-5 {
-  position: absolute;
-  bottom: 4rem;
-  left: 10rem;
-  animation: flicker 2s infinite;
-}
-
-.star-6 {
-  position: absolute;
-  top: 20rem;
-  right: 20rem;
-  animation: flicker 3s infinite;
 }
 
 @media (max-width: 1000px) {
