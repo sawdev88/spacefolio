@@ -3,11 +3,10 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-family: 'Play', sans-serif;
 }
 
 // Fonts
-h1, h2, h3, h4, h5, h6, p, li, ul { margin: 0; padding: 0 }
+h1, h2, h3, h4, h5, h6, p, li, ul, span { margin: 0; padding: 0; font-family: 'Play', sans-serif; }
 html { font-size: 1vw; }
 
 h1 {
@@ -25,6 +24,11 @@ p {
   font-size: 1.75rem;
   line-height: 2.25rem;
   letter-spacing: .1rem;
+}
+
+span,
+h4 {
+  display: inline-block;
 }
 
 h1,
@@ -46,7 +50,7 @@ a {
   clear: both;
 }
 
-.col-2 {
+.halfer {
   width: 50%;
   float: left;
 }
@@ -76,4 +80,33 @@ a {
 
 .large-padding {
   padding: 12rem 0;
+}
+
+.btn {
+  border: none;
+  background: #575872;
+  display: inline-block;
+  vertical-align: bottom;
+  padding: 1rem;
+  color: #fff;
+  transition: $ease;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.col-2 {
+  flex: 1;
+  padding: 2rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.text-right {
+  text-align: right;
 }

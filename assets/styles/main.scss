@@ -89,8 +89,123 @@
       }
     }
 
-  #fun {
+  #countdown {
     position: relative;
+    height: 56rem;
+
+    .logo {
+      font-size: 1.5rem;
+    }
+
+    .countdown-container {
+      display: flex;
+
+      .timer {
+        margin-bottom: 2rem;
+      }
+
+      .problem {
+        display: inline-block;
+        margin: 0 2rem 1rem 1rem;
+        font-size: 5rem;
+      }
+
+      h2 {
+        font-size: 3.5rem;
+      }
+      p {
+        font-size: 2rem;
+      }
+    }
+
+    #buttons {
+      .btn {
+        display: flex;
+        padding: 0;
+        display: block;
+        flex: 1;
+        font-size: 2rem;
+        padding: .5rem 0;
+        margin: .5rem 1rem;
+        border-radius: 5px;
+        box-shadow: 0 3px #ccc;
+
+        &:focus {
+          outline: none !important;
+        }
+
+        &:hover {
+          background: rgb(87,101,114);
+        }
+
+        &:disabled {
+          opacity: .5;
+
+          &:hover {
+            cursor: default;
+          }
+        }
+      }
+    }
+
+    .highest-score-container {
+      display: none;
+      margin-top: 1rem;
+
+      .highest-score {
+        margin-left: .5rem;
+      }
+    }
+
+    .countdown-modal {
+      position: absolute;
+      top: 12rem;
+      bottom: 24rem;
+      width: 75%;
+      background: #333;
+      text-align: center;
+      padding-top: 5rem;
+      border-radius: 5px;
+
+      select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        color: $white;
+        background: transparent;
+        border-radius: 0;
+        font-size: 2rem;
+        padding: 1rem;
+        margin-left: 2rem;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .btn {
+        display: block;
+        margin: 1rem auto 0;
+        width: 16rem;
+        border-radius: 5px;
+        box-shadow: 0 3px $white;
+        transition: $ease;
+
+        h4 {
+          text-transform: uppercase;
+          font-size: 2rem;
+        }
+
+        &:hover {
+          background: rgba(87,88,114, .75);
+        }
+      }
+
+      h2 {
+        color: $white;
+        display: inline-block;
+      }
+    }
 
     .mountain-layer {
       background: url('../img/mountain_layer.png') center center / cover;
@@ -98,6 +213,10 @@
       height: 26rem;
       position: absolute;
       bottom: 0;
+    }
+
+    h2 {
+      color: #333;
     }
   }
 
@@ -114,16 +233,15 @@
 
       .btn {
         border: none;
-        background: #575872;
         display: inline-block;
         vertical-align: bottom;
-        padding-left: 2.5rem;
+        padding: 0 0 0 2.5rem;
         margin-left: -5rem;
 
         i {
           color: #fff;
           font-size: 1.25rem;
-          padding: .42rem;
+          padding: .6rem;
           transition: $ease;
           transform: rotate(-90deg);
         }
@@ -178,11 +296,6 @@
           margin-bottom: 2rem;
         }
       }
-    }
-
-    .col-2 {
-      flex: 1;
-      padding: 2rem;
     }
 
     h3 {

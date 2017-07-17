@@ -46,9 +46,9 @@
         <h3>About Me</h3>
         <p>Single-origin coffee activated charcoal bespoke stumptown. Fingerstache austin woke farm-to-table prism chicharrones post-ironic, poke kickstarter. Try-hard unicorn brooklyn, kogi normcore cardigan adaptogen squid fingerstache activated charcoal pok pok yuccie jean shorts PBR&B hashtag. Woke schlitz offal listicle, scenester health goth flexitarian pabst yuccie raclette chartreuse vaporware stumptown art party. Meggings fanny pack farm-to-table, photo booth 3 wolf moon plaid flannel church-key viral pitchfork slow-carb affogato cardigan vaporware.</p>
 
-        <p class="col-2 small-margin">Cronut copper mug farm-to-table raclette, pinterest food truck cardigan DIY kogi artisan celiac. Street art pug tattooed knausgaard photo booth plaid next level. Unicorn air plant raclette man bun dreamcatcher cred. Pinterest affogato ennui whatever, gastropub lyft meh edison bulb.</p>
+        <p class="halfer small-margin">Cronut copper mug farm-to-table raclette, pinterest food truck cardigan DIY kogi artisan celiac. Street art pug tattooed knausgaard photo booth plaid next level. Unicorn air plant raclette man bun dreamcatcher cred. Pinterest affogato ennui whatever, gastropub lyft meh edison bulb.</p>
 
-        <div class="col-2 center-text">
+        <div class="halfer center-text">
           <img class="about-img" src="./assets/img/user.jpg" alt="test">
         </div>
 
@@ -57,14 +57,56 @@
         <div class="clear"></div>
       </section>
 
-      <section id="projects" class="temp">
+      <section id="projects">
         <div class="center-padding">
           <h3>Projects</h3>
         </div>
       </section>
 
-      <section id="fun" class="temp">
-        <h3 class="center padding-top">Countdown</h3>
+      <section id="countdown">
+        <h3 class="center padding-top">Countdown <i class="fa logo fa-chevron-down"></i></h3>
+
+        <div class="countdown-container center">
+          <div class="col-2">
+              <h2 class="will-fade">TIMER: </h2>
+              <p class="timer will-fade"></p>
+              <h2>SCORE:</h2>
+              <p class="score">0 / 0</p>
+              <div class="highest-score-container">
+                <span>Highest Score:</span> <span class="highest-score"></span>
+              </div>
+          </div>
+
+          <div class="col-2 text-right">
+            <span class="will-fade">sum: </span>
+            <h2 class="problem will-fade"></h2>
+
+            <div id="buttons">
+              <div class="row">
+                <button type="button" data-total class="button1 btn"></button>
+                <button type="button" data-total class="button2 btn"></button>
+              </div>
+              <div class="row">
+                <button type="button" data-total class="button3 btn"></button>
+                <button type="button" data-total class="button4 btn"></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="countdown-modal">
+            <h2>Select duration:</h2>
+            <select class="countdown-timer" name="countdown-timer">
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="15" selected>15</option>
+              <option value="20">20</option>
+              <option value="25">25</option>
+              <option value="30">30</option>
+            </select>
+            <button class="start-countdown btn"><h4>Start</h4></button>
+          </div>
+        </div>
+
         <div class="mountain-layer"></div>
       </section>
 
@@ -97,5 +139,6 @@
       <div class="chuck-norris"></div>
     </footer>
   </body>
+  <script src="./assets/scripts/countdown.js" charset="utf-8"></script>
   <script src="./assets/scripts/main.js" charset="utf-8"></script>
 </html>
