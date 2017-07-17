@@ -57,7 +57,7 @@
         <div class="clear"></div>
       </section>
 
-      <section id="projects">
+      <section id="projects" class="temp">
         <div class="center-padding">
           <h3>Projects</h3>
         </div>
@@ -95,7 +95,7 @@
 
           <div class="countdown-modal">
             <h2>Select duration:</h2>
-            <select class="countdown-timer" name="countdown-timer">
+            <select class="countdown-time" name="countdown-timer">
               <option value="5">5</option>
               <option value="10">10</option>
               <option value="15" selected>15</option>
@@ -104,6 +104,19 @@
               <option value="30">30</option>
             </select>
             <button class="start-countdown btn"><h4>Start</h4></button>
+          </div>
+
+          <div class="replay-modal">
+            <i class="fa fa-repeat" aria-hidden="true"></i>
+            <button class="btn replay-btn"><small>REPLAY</small></button>
+            <select class="countdown-time replay-select" name="countdown-timer">
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+              <option value="25">25</option>
+              <option value="30">30</option>
+            </select>
           </div>
         </div>
 

@@ -1,14 +1,16 @@
 // TODO
 // [x] disable game when timer is not going
 // [x] Hide start button after click
-// [ ] Show results and retry button when round is over
+// [x] Show results and retry button when round is over
 // [ ] Countdown at start (3..2..1..)
 // [x] have total count in score
 // [x] show highest score
 
-let timer = document.querySelector('.countdown-timer');
+let selectTime = document.querySelector('.countdown-time');
 var timerDisplay = document.querySelector('.timer');
-var timerValue = timer.value;
+var buttons = document.querySelectorAll('#buttons .btn');
+var willFade = document.querySelectorAll('.will-fade');
+var timerValue = selectTime.value;
 var attempts = 0;
 var scoreList = [];
 var points = 0;
@@ -43,11 +45,11 @@ let shuffle = (arr) => {
 };
 
 //Set game and play logic
-new function () {
+initilizeGame = () => {
   let sum,
       arr,
       btn,
-      shuffled
+      shuffled;
 
   let setGame = () => {
     let button1 = document.querySelector('.button1'),
@@ -85,7 +87,6 @@ new function () {
   // Initialize Game
   setGame();
 
-  let buttons = document.querySelectorAll('#buttons .btn');
   [].forEach.call(buttons, function(btn) {
     btn.addEventListener('click', function(){
       let choice = +this.dataset.total,
@@ -94,19 +95,18 @@ new function () {
 
       if (choice === answer) {
         setGame();
-        points += 1;
+        points++;
       } else {
         setGame();
       }
-      document.querySelector('.score').innerHTML = `${points} / ${attempts}`;
+      setPoints();
     });
   });
-
-}();
+}
 
 // Get selected duration
 timerDisplay.innerHTML = timerValue;
-timer.addEventListener('change', function() {
+selectTime.addEventListener('change', function() {
   timerValue = this.value;
   timerDisplay.innerHTML = timerValue;
 })
@@ -121,13 +121,12 @@ gameTimer = (time) => {
       gameTimer(time);
     }, 1000);
   } else {
-    let buttons = document.querySelectorAll('#buttons .btn');
-    let willFade = document.querySelectorAll('.will-fade');
     let scoreContainer = document.querySelector('.highest-score-container');
+    let replaySelect = document.querySelector('.replay-select');
 
     // Show highest score
     scoreList.push(points);
-    document.querySelector('.highest-score').innerHTML = (Math.max(scoreList));
+    document.querySelector('.highest-score').innerHTML = Math.max.apply(Math, scoreList);
     scoreContainer.style.display = 'block';
 
     // Diable buttons
@@ -139,10 +138,56 @@ gameTimer = (time) => {
     [].forEach.call(willFade, function(el) {
       el.style.opacity = .25;
     });
+
+    // Show replay modal
+    document.querySelector('.replay-modal').style.display = 'block';
+    document.querySelector('.replay-btn').addEventListener('click', function() {
+      resetGame();
+    })
+
+    // Set timerValue
+    replaySelect.value = timerValue;
+    replaySelect.addEventListener('change', function() {
+      timerValue = this.value;
+      timerDisplay.innerHTML = timerValue;
+    })
   }
 };
 
+// Start game modal
 document.querySelector('.start-countdown').addEventListener('click', function() {
   document.querySelector('.countdown-modal').style.display = 'none';
+  initilizeGame();
   gameTimer(timerValue);
 })
+
+setPoints = () => {
+  return document.querySelector('.score').innerHTML = `${points} / ${attempts}`;
+}
+
+// Reset game
+resetGame = () => {
+  attempts = 0;
+  points = 0;
+
+  // set points
+  setPoints();
+
+  // Enable Buttons
+  [].forEach.call(buttons, function(btn) {
+    btn.disabled = false;
+  });
+
+  // Fade in text
+  [].forEach.call(willFade, function(el) {
+    el.style.opacity = 1;
+  });
+
+  // hide reset modal
+  document.querySelector('.replay-modal').style.display = 'none';
+  let replaySelect = document.querySelector('.replay-select');
+  replaySelect.value = timerValue;
+
+  // start game
+  gameTimer(timerValue)
+}
