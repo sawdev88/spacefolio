@@ -3,7 +3,7 @@
 @import "partials/_stars";
 
 #landing-container {
-  background: url('../img/base_layer.png') no-repeat center center fixed;
+  background: url('../img/base_layer.png') no-repeat center center fixed / cover;
   height: 100vh;
   width: 100vw;
   position: relative;
@@ -16,8 +16,11 @@
   }
 
   .clouds-layer {
+    background: url('../img/clouds_overlay.png') no-repeat center center / cover;
     position: relative;
     bottom: -24rem;
+    width: 100vw;
+    height: 46rem;
   }
 }
 
@@ -74,8 +77,11 @@
     }
 
     .cloud-layer {
+      background: url('../img/cloud_layer.png') no-repeat center center / contain;
+      height: 32rem;
+      width: 32rem;
       position: absolute;
-      bottom: -12rem;
+      bottom: -18rem;
       right: -12rem;
     }
   }
