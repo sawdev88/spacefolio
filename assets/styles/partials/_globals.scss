@@ -28,6 +28,12 @@ p {
   letter-spacing: .1rem;
 }
 
+a,
+i,
+li {
+  transition: $ease;
+}
+
 span {
   font-family: 'Play', sans-serif;
 }
@@ -107,6 +113,14 @@ a {
 .col-2 {
   flex: 1;
   padding: 2rem;
+}
+
+.col-3 {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  text-align: center;
+  padding: 0 2rem;
 }
 
 .row {

@@ -44,7 +44,6 @@
       text-transform: uppercase;
       color: $white;
       padding: 2rem;
-      transition: $ease;
 
       &:hover {
         cursor: pointer;
@@ -89,6 +88,74 @@
   #projects {
     background: $bg;
     border-top: 1rem solid #4e5a66;
+
+    .project {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 18rem;
+
+      &.fullee {
+        border: 1rem solid rgba(80,80,80,0.5);
+        background: rgba(80,80,80,0.2);
+      }
+
+      &.intervals {
+        border: 1rem solid rgba(87,88,114,.5);
+        background: rgba(87,88,114,.2);
+      }
+
+      .fullee-content,
+      .intervals-content {
+        a {
+          margin-top: 2rem;
+          font-size: 2rem;
+
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+
+      .fullee-logo {
+        display: inline-block;
+        background: rgba(80,80,80,0.5);
+        height: 77.5%;
+
+        h3 {
+          display: inline-block;
+          border: 1rem solid $white;
+          font-family: 'Vibur', cursive;
+          margin: 0;
+          padding: 2rem 4rem;
+        }
+      }
+
+      .intervals-logo {
+        background: rgba(87,88,114,.5);
+        height: 77.5%;
+        text-align: left;
+
+        h4 {
+          font-family: sans-serif;
+          font-size: 3rem;
+          color: $white;
+          display: inline-block;
+          padding-top: 11.5rem;
+        }
+
+        i {
+          color: $white;
+          font-size: 3rem;
+          margin-right: .5rem;
+        }
+      }
+
+      &:first-of-type {
+        margin: 5rem 0 3rem;
+      }
+    }
 
       h3 {
         color: #fbfafb;
@@ -179,7 +246,6 @@
         width: 16rem;
         border-radius: 5px;
         box-shadow: 0 3px $white;
-        transition: $ease;
 
         h4 {
           text-transform: uppercase;
@@ -278,7 +344,6 @@
           color: #fff;
           font-size: 1.25rem;
           padding: .6rem;
-          transition: $ease;
           transform: rotate(-90deg);
         }
 
@@ -338,9 +403,6 @@
       color: #fff;
     }
   }
-
-  // TEMP
-  .temp { height: 50rem; }
 }
 
 #footer {
