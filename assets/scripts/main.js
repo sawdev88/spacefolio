@@ -36,13 +36,14 @@ function convertToPx(item) {
 
 // Parallax Landing Banner
 window.addEventListener('scroll', function () {
-  let cloudMarker = -(window.pageYOffset / 4);
+  let cloudMarker = (window.pageYOffset / 4);
   let slideMarker = window.pageYOffset / 10;
   let opacityMarker = 1 - (window.pageYOffset / 500);
 
   // Landing Banner - Move clouds up
-  if (cloudMarker > -180) {
-    document.querySelector('.clouds-layer').style.marginTop = convertToPx(cloudMarker);
+  if (cloudMarker < 188) {
+    console.log(cloudMarker);
+    document.querySelector('.clouds-layer').style.marginBottom = convertToPx(cloudMarker);
   }
 
   // Landing Banner - Fade out text
@@ -69,15 +70,15 @@ document.querySelector('.nav ul').addEventListener('click', function(e) {
   smoothScroll(document.getElementById(el).offsetTop);
 })
 
-// Chuck Norris request
-  new function () {
-    let requestURL = 'https://api.chucknorris.io/jokes/random';
-    let request = new XMLHttpRequest();
-    request.open('GET', requestURL);
-    request.responseType = 'json';
-    request.send();
+// Chuck Norris request :)
+new function () {
+  let requestURL = 'https://api.chucknorris.io/jokes/random';
+  let request = new XMLHttpRequest();
+  request.open('GET', requestURL);
+  request.responseType = 'json';
+  request.send();
 
-    request.onload = function() {
-      document.querySelector('.chuck-norris').innerHTML = (request.response.value)
-    }
-  }();
+  request.onload = function() {
+    document.querySelector('.chuck-norris').innerHTML = (request.response.value)
+  }
+}();
