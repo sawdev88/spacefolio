@@ -132,3 +132,21 @@ a {
 .text-right {
   text-align: right;
 }
+
+@media (max-width: 1000px) {
+  .break-10 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .break-8 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .break-6 {
+    width: 100%;
+  }
+}
