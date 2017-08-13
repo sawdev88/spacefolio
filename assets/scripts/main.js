@@ -1,6 +1,6 @@
 // Modified from surfmuggle stackoverflow reply
 // https://stackoverflow.com/questions/17722497/scroll-smoothly-to-specific-element-on-page
-function smoothScroll(eID) {
+smoothScroll = (eID) => {
     let startY = self.pageYOffset
     let stopY = eID;
     let distance = stopY > startY ? stopY - startY : startY - stopY;
@@ -30,7 +30,7 @@ function smoothScroll(eID) {
   return false;
 }
 
-function convertToPx(item) {
+convertToPx = (item) => {
   return item + 'px';
 }
 
@@ -82,3 +82,8 @@ new function () {
     document.querySelector('.chuck-norris').innerHTML = (request.response.value)
   }
 }();
+
+// Toggle tooltip
+document.querySelector('.sawco').addEventListener('click', function () {
+  this.nextElementSibling.classList.toggle('show')
+})

@@ -7,18 +7,60 @@ html, body, h1 {
 
 html { font-size: 1vw; }
 
+body {
+  background: url('../img/tree_bark.png');
+}
+
 h1 {
   font-size: 4rem;
 }
 
-body {
-  background: url('../img/tree_bark.png');
+h2 {
+  font-size: 2.5rem;
+  margin: 2rem 6rem 6rem;
 }
 
 p {
   font-size: 1.5rem;
   letter-spacing: .1rem;
   line-height: 2.25rem;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: #009cdc;
+
+  &:hover {
+    color: #007cb0;
+  }
+}
+
+pre {
+  font-size: 1rem;
+  line-height: 1.4rem;
+  border-radius: 5px;
+  overflow: auto;
+  background: #eee;
+  padding: 0;
+  word-wrap: break-word;
+}
+
+.center {
+  text-align: center;
+
+  hr {
+    width: 50%;
+    margin: 4rem auto 6rem;
+  }
+
+  a {
+    margin: 4rem auto;
+  }
+}
+
+.inline {
+  display: inline-block;
 }
 
 .title {
@@ -28,7 +70,7 @@ p {
 #container {
   background: #fff;
   margin: 6rem auto;
-  padding: 6rem 4rem;
+  padding: 6rem 4rem 2rem;
   width: 75%;
   border-radius: 8px;
 }
@@ -66,7 +108,8 @@ p {
 }
 
 .spin-2 {
-  border-top: .5rem solid #b9b0c0;
+  border: .5rem solid #FF8100;
+  border-top: .5rem dotted #ff8d19;
 }
 
 .spin-3 {
@@ -88,4 +131,15 @@ p {
   border: .5rem double #c93838;
   border-top-color: #eec3c3;
   border-bottom-color: #eec3c3;
+}
+
+@media (max-width: 1000px) {
+  html { font-size: 1.5vw; }
+  #container { width: 80%; }
+}
+
+@media (max-width: 600px) {
+  html { font-size: 2.5vw; }
+  h2 { margin: 4rem 0}
+  #container { width: 90%; }
 }
