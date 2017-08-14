@@ -74,12 +74,29 @@
     }
 
     .about-img {
-      position: relative;
-      height: 16rem;
-      width: auto;
-      border: 1rem solid #333;
-      border-radius: 50%;
-      margin-top: 2rem;
+      height: 36rem;
+      background: url('../img/me.jpg') no-repeat center center / cover;
+      display: flex;
+      align-items: center;
+      padding: 0 4rem;
+      margin-top: 4rem;
+      border-radius: 1rem;
+
+      .favs {
+        display: flex;
+        background: #fff;
+        border-radius: 1rem;
+        font-size: 1.75rem;
+        line-height: 3rem;
+        padding: 2rem;
+
+        @media (max-width: 1000px) {
+          & {
+            flex: 1;
+            font-size: 1rem;
+          }
+        }
+      }
     }
 
     .cloud-layer {
@@ -137,7 +154,6 @@
 
       .fullee-logo {
         background: rgba(80,80,80,0.5);
-        height: 77.5%;
 
         h3 {
           display: inline-block;
@@ -150,7 +166,6 @@
 
       .intervals-logo {
         background: rgba(87,88,114,.5);
-        height: 77.5%;
         text-align: left;
 
         h4 {
@@ -216,6 +231,20 @@
         top: -2rem;
         transform: translateX(-50%);
       }
+
+      a {
+        &:hover {
+          color: $teal
+        }
+      }
+
+      @media (max-width: 1000px) {
+        width: 70%
+      }
+
+      @media (max-width: 600px) {
+        width: 80%
+      }
     }
 
     .show {
@@ -236,9 +265,7 @@
       font-size: 1.5rem;
 
       @media (max-width: 600px) {
-        & {
-          display: none
-        }
+        display: none
       }
     }
 
@@ -263,9 +290,8 @@
       }
 
       @media (max-width: 1000px) {
-        & {
-          display: block;
-        }
+        display: block;
+
         .col-2 {
           padding: 0;
         }
@@ -278,7 +304,7 @@
         padding: 0;
         flex: 1;
         font-size: 2rem;
-        padding: .5rem 0;
+        padding: .5rem 1rem;
         margin: .5rem 1rem;
         border-radius: 5px;
         box-shadow: 0 3px #ccc;
@@ -300,9 +326,7 @@
         }
 
         @media (max-width: 600px) {
-          & {
-            display: block;
-          }
+          display: block;
         }
       }
     }
@@ -345,9 +369,7 @@
       }
 
       @media (max-width: 1000px) {
-        & {
-          top: 12rem;
-        }
+        top: 12rem;
       }
     }
 
@@ -401,9 +423,7 @@
       }
 
       @media (max-width: 1000px) {
-        & {
-          margin: 4rem 0;
-        }
+        margin: 4rem 0;
       }
     }
 
@@ -420,9 +440,7 @@
     }
 
     @media (max-width: 1000px) {
-      & {
-        height: 72rem;
-      }
+      height: 72rem;
     }
   }
 
@@ -463,6 +481,37 @@
       text-align: center;
       align-items: center;
 
+      .send-a-hello {
+        @media (max-width: 1000px) {
+          text-align: center;
+        }
+      }
+
+      input {
+        width: 50%;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        margin-top: 1rem;
+        vertical-align: bottom;
+        height: 2.5rem;
+
+        &:focus {
+          outline: none !important;
+          border: 2px solid rgba(87,101,114,1);
+        }
+
+        @media (max-width: 1000px) {
+          width: 60vw;
+          height: 3rem;
+        }
+
+        @media (max-width: 600px) {
+          width: 75vw;
+          height: 3.5rem;
+          font-size: 1.25rem;
+        }
+      }
+
       .btn {
         border: none;
         display: inline-block;
@@ -488,31 +537,17 @@
         &:focus {
           outline: none !important;
         }
-
-        @media (max-width: 1000px) {
-          & {
-            height: 3.7rem;
-          }
-        }
       }
 
-      input {
-        width: 50%;
-        padding: .5rem 1rem;
-        font-size: 1rem;
-        margin-top: 1rem;
-        vertical-align: bottom;
-
-        &:focus {
-          outline: none !important;
-          border: 2px solid rgba(87,101,114,1);
-        }
+      #submit {
+        height: 2.5rem;
 
         @media (max-width: 1000px) {
-          & {
-            width: 88%;
-            font-size: 2rem;
-          }
+          height: 3rem;
+        }
+
+        @media (max-width: 600px) {
+          height: 3.5rem;
         }
       }
 
@@ -545,10 +580,9 @@
       }
 
       @media (max-width: 1000px) {
-        & {
-          display: block;
-          text-align: right;
-        }
+        display: block;
+        text-align: right;
+
         .fa {
           text-align: left;
           padding-left: 1rem;
@@ -582,12 +616,10 @@
   }
 
   @media (max-width: 1000px) {
-    & {
-      padding: 4rem;
-      display: block;
-      text-align: center;
-      font-size: 1.25rem;
-    }
+    padding: 4rem;
+    display: block;
+    text-align: center;
+    font-size: 1.25rem;
 
     .chuck-norris {
       text-align: center;
