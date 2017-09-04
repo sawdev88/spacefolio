@@ -164,6 +164,11 @@ a {
     transform: translateX(-50%);
   }
 
+  .fa {
+    font-size: 2rem;
+    margin: 1rem 1rem 0;
+  }
+
   a {
     &:hover {
       color: $teal

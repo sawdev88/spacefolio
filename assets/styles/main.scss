@@ -56,6 +56,7 @@
 
   #about {
     position: relative;
+    padding-top: 8rem;
 
     .skew {
       position: absolute;
@@ -77,12 +78,12 @@
 
     .about-img {
       height: 36rem;
+      width: 100vw;
       background: url('../img/me.jpg') no-repeat center center / cover;
       display: flex;
       align-items: center;
-      padding: 0 4rem;
-      margin-top: 4rem;
-      border-radius: 1rem;
+      padding: 0 12.5%;
+      margin-top: 8rem;
 
       .favs {
         display: flex;
@@ -113,7 +114,7 @@
         & {
           height: 22rem;
           width: 22rem;
-          bottom: -8rem;
+          bottom: -10rem;
         }
       }
     }
@@ -198,6 +199,25 @@
       }
     }
 
+    .smco {
+      background: url('../img/filler-bg.jpg') no-repeat center center / cover;
+      height: 18rem;
+      width: 100%;
+      text-align: center;
+      font-size: 4rem;
+      color: #fff;
+      padding-top: 7rem;
+
+      .fa {
+        display: block;
+        font-size: 3rem;
+      }
+
+      @media (max-width: 600px) {
+        padding-top: 2rem;
+      }
+    }
+
     .sawco {
       width: 24rem;
       height: auto;
@@ -217,7 +237,7 @@
   }
 
   #countdown {
-    background: url('../img/crossword.png');
+    //background: url('../img/crossword.png');
     position: relative;
     height: 56rem;
 

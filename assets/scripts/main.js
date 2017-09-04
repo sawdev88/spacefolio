@@ -84,6 +84,6 @@ new function () {
 }();
 
 // Toggle tooltip
-document.querySelector('.sawco').addEventListener('click', function () {
-  this.nextElementSibling.classList.toggle('show')
+document.querySelector('.smco').addEventListener('click', function () {
+  this.nextElementSibling.classList.toggle('show');
 })
